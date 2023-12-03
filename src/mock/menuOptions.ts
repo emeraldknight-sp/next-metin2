@@ -1,6 +1,6 @@
 import { Option } from "@/interfaces/Option";
 
-export const menu: Option[] = [
+export const menuOptions: Option[] = [
 	{
 		id: 1,
 		url: "/",
