@@ -5,7 +5,14 @@ import Link from "next/link";
 import LogoGameForge from "@/assets/logo-gameforge.svg";
 import React, { useState } from "react";
 import { Button } from "@/components/Button";
-import { FaBars, FaFacebookF, FaInstagram, FaSteam, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+	FaBars,
+	FaFacebookF,
+	FaInstagram,
+	FaSteam,
+	FaTwitter,
+	FaYoutube,
+} from "react-icons/fa";
 import { Menu } from "@/components/Menu";
 
 import Metin2Title from "../assets/metin2.webp";
@@ -29,7 +36,7 @@ export default function Home() {
 							aria-label="Logo"
 						/>
 						<Button
-							className="lg:hidden text-white"
+							className="lg:hidden text-white outline-none"
 							onClick={handleClick}
 							ariaLabel="Menu"
 						>
@@ -49,11 +56,11 @@ export default function Home() {
 								alt="Metin 2"
 								aria-label="Metin 2"
 							/>
-							<p className="text-sm">
+							<p className="text-sm leading-6">
 								For a long time now the Dragon God&apos;s breath has watched
 								over the kingdoms of Shinsoo, Chunjo and Jinno.
 							</p>
-							<p className="text-sm ">
+							<p className="text-sm leading-6">
 								But fascinating world of magic is facing a terrifying threat:
 								The impact of the Metin Stones has not only torn wounds into the
 								entire continent, but has also caused chaos and destruction
