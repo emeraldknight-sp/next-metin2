@@ -5,16 +5,8 @@ import Link from "next/link";
 import LogoGameForge from "@/assets/logo-gameforge.svg";
 import React, { useState } from "react";
 import { Button } from "@/components/Button";
+import { FaBars, FaFacebookF, FaInstagram, FaSteam, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Menu } from "@/components/Menu";
-import { BsSteam } from "react-icons/bs";
-
-import {
-	FiFacebook,
-	FiInstagram,
-	FiMenu,
-	FiTwitter,
-	FiYoutube,
-} from "react-icons/fi";
 
 import Metin2Title from "../assets/metin2.webp";
 
@@ -41,7 +33,7 @@ export default function Home() {
 							onClick={handleClick}
 							ariaLabel="Menu"
 						>
-							<FiMenu size={24} />
+							<FaBars size={24} />
 						</Button>
 						<Menu openMenu={openMenu} />
 					</div>
@@ -93,43 +85,43 @@ export default function Home() {
 				<section className="container mx-auto p-4">
 					<nav className="flex flex-row justify-end gap-4">
 						<Button
-							className="bg-white p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95"
-							ariaLabel=""
+							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							ariaLabel="click to acess youtube"
 						>
 							<Link href="/">
-								<FiYoutube size={16} />
+								<FaYoutube size={20} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-white p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95"
-							ariaLabel=""
+							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							ariaLabel="click to acess twitter"
 						>
 							<Link href="/">
-								<FiTwitter size={16} />
+								<FaTwitter size={20} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-white p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95"
-							ariaLabel=""
+							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							ariaLabel="click to acess instagram"
 						>
 							<Link href="/">
-								<FiInstagram size={16} />
+								<FaInstagram size={20} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-white p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95"
-							ariaLabel=""
+							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							ariaLabel="click to acess facebook"
 						>
 							<Link href="/">
-								<FiFacebook size={16} />
+								<FaFacebookF size={20} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-white p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95"
-							ariaLabel=""
+							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							ariaLabel="click to acess steam"
 						>
 							<Link href="/">
-								<BsSteam size={16} />
+								<FaSteam size={20} />
 							</Link>
 						</Button>
 					</nav>
