@@ -1,10 +1,5 @@
-interface ButtonProps {
-	children: React.ReactNode;
-	type?: "button" | "submit" | "reset" | undefined;
-	className: string;
-	ariaLabel: string;
-	onClick?: () => void;
-}
+import { ButtonProps } from "@/interfaces/ButtonProps";
+
 
 export const Button = ({
 	children,
