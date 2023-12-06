@@ -14,14 +14,20 @@ import {
 	FaYoutube,
 } from "react-icons/fa";
 import { Menu } from "@/components/Menu";
+import { contents } from "@/mock/contents";
 
 import Metin2Title from "../assets/metin2.webp";
 
 export default function Home() {
 	const [openMenu, setOpenMenu] = useState(false);
+	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const handleClick = () => {
 		setOpenMenu(!openMenu);
+	};
+
+	const handleSlide = (newIndex: number) => {
+		setCurrentIndex(newIndex);
 	};
 
 	return (
@@ -48,42 +54,62 @@ export default function Home() {
 			</header>
 			<main className="flex flex-1 text-white">
 				<section className="container mx-auto p-4 flex flex-col justify-center">
-					<article className="flex flex-col gap-4 w-[288px] md:w-1/2 lg:w-1/3">
-						<div className="flex flex-col gap-2">
-							<Image
-								src={Metin2Title}
-								className="border-b-[3px] border-disabledGray border-solid pb-2"
-								alt="Metin 2"
-								aria-label="Metin 2"
-							/>
-							<p className="text-sm leading-6">
-								For a long time now the Dragon God&apos;s breath has watched
-								over the kingdoms of Shinsoo, Chunjo and Jinno.
-							</p>
-							<p className="text-sm leading-6">
-								But fascinating world of magic is facing a terrifying threat:
-								The impact of the Metin Stones has not only torn wounds into the
-								entire continent, but has also caused chaos and destruction
-								throughout the land and its inhabitants.
-							</p>
-						</div>
-						<div className="flex flex-row justify-start gap-4">
-							<Button
-								className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-red border-red rounded-2xl"
-								ariaLabel="click here to play now"
-							>
-								<Link href="" className="text-white font-semibold">
-									Play Now
-								</Link>
-							</Button>
-							<Button
-								className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-white border-white rounded-2xl"
-								ariaLabel="click here to sign up"
-							>
-								<Link href="" className=" text-black font-semibold">
-									Sign Up
-								</Link>
-							</Button>
+					<article className="flex flex-col gap-4 w-[288px] md:w-1/2 lg:w-1/2 xl:w-1/3">
+						<div className="flex flex-col-reverse lg:flex-row items-center lg:items-center gap-4 lg:gap-16">
+							<nav className="flex lg:flex-col gap-2">
+								{contents.map((_, index) => (
+									<Button
+										key={index}
+										ariaLabel={`click here to view the ${
+											index === 0
+												? "first slide"
+												: index === 1
+												  ? "second slide"
+												  : "third slide"
+										}`}
+										className={`w-6 h-6 rounded-full  ${
+											currentIndex === index
+												? "bg-white"
+												: "bg-disabledGray bg-opacity-60"
+										}`}
+										onClick={() => handleSlide(index)}
+									></Button>
+								))}
+							</nav>
+							<div className="flex flex-col">
+								<Image
+									src={Metin2Title}
+									className="border-b-[3px] border-disabledGray border-solid pb-2"
+									alt="Metin 2"
+									aria-label="Metin 2"
+									priority
+								/>
+								<>
+									{contents[currentIndex].text.map((element, index) => (
+										<p key={index} className={`text-sm leading-8`}>
+											{element}
+										</p>
+									))}
+								</>
+								<div className="flex flex-row justify-start gap-4 mt-4">
+									<Button
+										className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-red border-red rounded-2xl"
+										ariaLabel="click here to play now"
+									>
+										<Link href="" className="text-white font-semibold">
+											Play Now
+										</Link>
+									</Button>
+									<Button
+										className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-white border-white rounded-2xl"
+										ariaLabel="click here to sign up"
+									>
+										<Link href="" className=" text-black font-semibold">
+											Sign Up
+										</Link>
+									</Button>
+								</div>
+							</div>
 						</div>
 					</article>
 				</section>
