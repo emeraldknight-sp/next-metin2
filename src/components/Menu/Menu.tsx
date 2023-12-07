@@ -14,7 +14,7 @@ export const Menu = ({ openMenu }: MenuProps) => {
 
 	return (
 		<nav
-			className={`flex flex-col gap-6 fixed top-16 left-0 z-50 w-full h-full p-4 transition-all bg-black bg-opacity-95 ${
+			className={`flex flex-col gap-6 fixed top-16 left-0 z-50 w-full h-full p-4 transition-all bg-darkGray bg-opacity-95 ${
 				openMenu ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
 			} lg:flex lg:flex-row lg:flex-1 lg:justify-between lg:items-center lg:min-w-max lg:static lg:gap-4 lg:translate-x-0 lg:opacity-100 lg:p-0 lg:bg-transparent lg:bg-opacity-0`}
 		>
