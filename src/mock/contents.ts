@@ -4,7 +4,7 @@ export const contents: Content[] = [
 	{
 		text: [
 			`For a long time now the Dragon God's breath has watched over the kingdoms of Shinsoo, Chunjo and Jinno.`,
-			`But fascinating world of magic is facing a terrifying threat: The impact of the Metin Stones has not only torn wounds into the entire continent, but has also caused chaos and destruction throughout the land and its inhabitants.`,
+			` But fascinating world of magic is facing a terrifying threat: The impact of the Metin Stones has not only torn wounds into the entire continent, but has also caused chaos and destruction throughout the land and its inhabitants.`,
 		],
 	},
 	{

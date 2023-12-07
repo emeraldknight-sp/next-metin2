@@ -1,3 +1,3 @@
 export interface Content {
-	text: string | string[];
+	text: string[];
 }
