@@ -67,7 +67,7 @@ export default function Home() {
 												  ? "second slide"
 												  : "third slide"
 										}`}
-										className={`w-6 h-6 rounded-full  ${
+										className={`w-6 h-6 rounded-full z-10 ${
 											currentIndex === index
 												? "bg-white"
 												: "bg-disabledGray bg-opacity-60"
@@ -84,13 +84,20 @@ export default function Home() {
 									aria-label="Metin 2"
 									priority
 								/>
-								<>
-									{contents[currentIndex].text.map((element, index) => (
-										<p key={index} className={`text-sm leading-8`}>
-											{element}
+								<div className="relative h-[288px] md:h-[224px] xl:h-[256px]">
+									{contents.map((element, index) => (
+										<p
+											key={index}
+											className={`text-sm leading-8 transition-all duration-1000 ${
+												currentIndex === index
+													? "opacity-100"
+													: "opacity-0 absolute top-0 left-0"
+											}`}
+										>
+											{element.text}
 										</p>
 									))}
-								</>
+								</div>
 								<div className="flex flex-row justify-start gap-4 mt-4">
 									<Button
 										className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-red border-red rounded-2xl"
@@ -118,43 +125,43 @@ export default function Home() {
 				<section className="container mx-auto p-4">
 					<nav className="flex flex-row justify-end gap-4">
 						<Button
-							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess youtube"
 						>
 							<Link href="/">
-								<FaYoutube size={20} />
+								<FaYoutube size={16} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess twitter"
 						>
 							<Link href="/">
-								<FaTwitter size={20} />
+								<FaTwitter size={16} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess instagram"
 						>
 							<Link href="/">
-								<FaInstagram size={20} />
+								<FaInstagram size={16} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess facebook"
 						>
 							<Link href="/">
-								<FaFacebookF size={20} />
+								<FaFacebookF size={16} />
 							</Link>
 						</Button>
 						<Button
-							className="bg-transparent p-2 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-2"
+							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess steam"
 						>
 							<Link href="/">
-								<FaSteam size={20} />
+								<FaSteam size={16} />
 							</Link>
 						</Button>
 					</nav>
