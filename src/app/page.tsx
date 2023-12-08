@@ -104,7 +104,7 @@ export default function Home() {
 								ariaLabel="click here to play now"
 							>
 								<Link
-									href="https://gameforge.com/pt-PT/download"
+									href="https://gameforge.com/pt-PT/play/metin2"
 									className="text-white font-semibold"
 									target="_self"
 								>
@@ -116,7 +116,7 @@ export default function Home() {
 								ariaLabel="click here to sign up"
 							>
 								<Link
-									href="https://gameforge.com/pt-PT/sign-in"
+									href="https://gameforge.com/pt-PT/sign-up"
 									className=" text-black font-semibold"
 									target="_self"
 								>

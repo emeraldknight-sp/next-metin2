@@ -53,8 +53,9 @@ export const Menu = ({ openMenu }: MenuProps) => {
 					ariaLabel="Login"
 				>
 					<Link
-						href="https://minhaconta.ongame.net/entrar/?site=metin-2&url=https://m2.ongame.net/"
+						href="https://gameforge.com/pt-PT/sign-in"
 						className="text-white text-xs"
+						target="_self"
 					>
 						Login
 					</Link>
@@ -64,8 +65,9 @@ export const Menu = ({ openMenu }: MenuProps) => {
 					ariaLabel="Download"
 				>
 					<Link
-						href="https://m2.ongame.net/download/ongame-downloader/"
+						href="https://gameforge.com/pt-PT/download"
 						className="text-white text-xs"
+						target="_self"
 					>
 						Download
 					</Link>
