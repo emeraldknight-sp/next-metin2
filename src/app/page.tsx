@@ -54,69 +54,75 @@ export default function Home() {
 			</header>
 			<main className="flex flex-1 text-white">
 				<section className="container mx-auto p-4 flex flex-col justify-center">
-					<article className="flex flex-col gap-4 w-[288px] md:w-1/2 lg:w-1/2 xl:w-1/3">
-						<div className="flex flex-col-reverse lg:flex-row items-center lg:items-center gap-4 lg:gap-16">
-							<nav className="flex lg:flex-col gap-2">
-								{contents.map((_, index) => (
-									<Button
+					<article className="flex flex-col gap-4 w-[288px] md:w-1/2 lg:w-1/2 xl:w-1/3 lg:grid lg:grid-cols-4">
+						<div className="flex flex-col justify-start lg:order-2 lg:col-span-3">
+							<Image
+								src={Metin2Title}
+								className="border-b-[3px] border-disabledGray border-solid pb-2"
+								alt="Metin 2"
+								aria-label="Metin 2"
+								priority
+							/>
+							<div className="relative h-[288px] md:h-[224px] xl:h-[256px]">
+								{contents.map((element, index) => (
+									<p
 										key={index}
-										ariaLabel={`click here to view the ${
-											index === 0
-												? "first slide"
-												: index === 1
-												  ? "second slide"
-												  : "third slide"
-										}`}
-										className={`w-6 h-6 rounded-full z-10 ${
+										className={`text-sm leading-8 transition-all duration-1000 ${
 											currentIndex === index
-												? "bg-white"
-												: "bg-disabledGray bg-opacity-60"
+												? "opacity-100"
+												: "opacity-0 absolute top-0 left-0"
 										}`}
-										onClick={() => handleSlide(index)}
-									></Button>
+									>
+										{element.text}
+									</p>
 								))}
-							</nav>
-							<div className="flex flex-col">
-								<Image
-									src={Metin2Title}
-									className="border-b-[3px] border-disabledGray border-solid pb-2"
-									alt="Metin 2"
-									aria-label="Metin 2"
-									priority
-								/>
-								<div className="relative h-[288px] md:h-[224px] xl:h-[256px]">
-									{contents.map((element, index) => (
-										<p
-											key={index}
-											className={`text-sm leading-8 transition-all duration-1000 ${
-												currentIndex === index
-													? "opacity-100"
-													: "opacity-0 absolute top-0 left-0"
-											}`}
-										>
-											{element.text}
-										</p>
-									))}
-								</div>
-								<div className="flex flex-row justify-start gap-4 mt-4">
-									<Button
-										className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-red border-red rounded-2xl"
-										ariaLabel="click here to play now"
-									>
-										<Link href="" className="text-white font-semibold">
-											Play Now
-										</Link>
-									</Button>
-									<Button
-										className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-white border-white rounded-2xl"
-										ariaLabel="click here to sign up"
-									>
-										<Link href="" className=" text-black font-semibold">
-											Sign Up
-										</Link>
-									</Button>
-								</div>
 							</div>
+						</div>
+						<nav className="flex flex-row justify-center lg:flex-col gap-2 lg:order-1 lg:row-span-2">
+							{contents.map((_, index) => (
+								<Button
+									key={index}
+									ariaLabel={`click here to view the ${
+										index === 0
+											? "first slide"
+											: index === 1
+											  ? "second slide"
+											  : "third slide"
+									}`}
+									className={`w-6 h-6 rounded-full z-10 ${
+										currentIndex === index
+											? "bg-white"
+											: "bg-disabledGray bg-opacity-60"
+									}`}
+									onClick={() => handleSlide(index)}
+								></Button>
+							))}
+						</nav>
+						<div className="flex flex-row justify-start gap-4 mt-4 lg:order-3">
+							<Button
+								className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-red border-red rounded-2xl"
+								ariaLabel="click here to play now"
+							>
+								<Link
+									href="https://gameforge.com/pt-PT/download"
+									className="text-white font-semibold"
+									target="_self"
+								>
+									Play Now
+								</Link>
+							</Button>
+							<Button
+								className="flex flex-1 lg:flex-none lg:w-28 px-4 py-2 lg:py-[10px] bg-white border-white rounded-2xl"
+								ariaLabel="click here to sign up"
+							>
+								<Link
+									href="https://gameforge.com/pt-PT/sign-in"
+									className=" text-black font-semibold"
+									target="_self"
+								>
+									Sign Up
+								</Link>
+							</Button>
 						</div>
 					</article>
 				</section>
@@ -128,7 +134,11 @@ export default function Home() {
 							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess youtube"
 						>
-							<Link href="/">
+							<Link
+								href="https://www.youtube.com/@Gameforge"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<FaYoutube size={16} />
 							</Link>
 						</Button>
@@ -136,7 +146,11 @@ export default function Home() {
 							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess twitter"
 						>
-							<Link href="/">
+							<Link
+								href="https://twitter.com/Gameforge"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<FaTwitter size={16} />
 							</Link>
 						</Button>
@@ -144,7 +158,11 @@ export default function Home() {
 							className="bg-transparent p-1 rounded-full transition-all hover:brightness-90 hover:scale-105 active:scale-95 border-white border-[1px]"
 							ariaLabel="click to acess instagram"
 						>
-							<Link href="/">
+							<Link
+								href="https://www.instagram.com/gameforge_com/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<FaInstagram size={16} />
 							</Link>
 						</Button>
